@@ -1,0 +1,25 @@
+span.icon-center i{
+  display: block;
+  text-align: center;
+}
+div.container.icons-row{
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+a.btn.white.try-dapp{
+  margin-left:1em;
+}
+
+span.white-text.name h5{
+  margin-top:5em;
+  margin-bottom: 1em;
+}
+
+div.card.horizontal.cert{
+  border-left-color: #80cbc4;
+  border-left-style: solid;
+  border-left-width: 0.5em;
+}
+button#authenticate-click{
+  margin-bottom: 4em;
+}
