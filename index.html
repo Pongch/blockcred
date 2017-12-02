@@ -35,10 +35,10 @@
       </div>
       <span class="white-text name"><h5>Menu</h5></span>
     </div></li>
-    <li><a href="/"><i class="material-icons">launch</i>Home</a></li>
-    <li><a href="/getcert.html"><i class="material-icons">search</i>Get Credential</a></li>
+    <li><a href="/blockcred"><i class="material-icons">launch</i>Home</a></li>
+    <li><a href="/blockcred/getcert.html"><i class="material-icons">search</i>Get Credential</a></li>
     <li><a href="#!"><i class="material-icons">add_circle</i>Register Organization</a></li>
-    <li><a href="/verify-org.html"><i class="material-icons">verified_user</i> Verify Organization</a></li>
+    <li><a href="/blockcred/verify-org.html"><i class="material-icons">verified_user</i> Verify Organization</a></li>
   </ul>
 
 
@@ -75,46 +75,6 @@
       </div>
     </div>
   </div>
-
-  <div class="container">
-    <!--retrieve certificate feature-->
-    <h3>Retrieve Proof of Certificate</h3>
-    <div class="row">
-      <div class="input-field col s6">
-        <input type="text" class="validate" id="cert-id" name="id" value="1738">
-        <label for="cert" class="active">Certificate ID</label>
-        <input type="button" id="cert-click" class="waves-effect waves-light btn" value="Get Certificate">
-      </div>
-    </div>
-
-    <h4 class="center-align"><div id="org-name"><i class="material-icons large">school</i></div></h4>
-    <p class="center-align">To all persons be it known that</p>
-    <h4 class="center-align"><div id="name">...</div></h4>
-    <p class="center-align">has completed the prescribed studies and satisfied the requirement for:</p>
-    <h4 class="center-align"><div id="degree-name">...</div></h4>
-    <p class="center-align">at the date:</p>
-    <h4 class="center-align"><div id="date">...</div></h4>
-    <p class="center-align">certified by:</p>
-    <p class="center-align"><div id="org" class="center-align">...</div></p>
-    <div class="card-action" id="proof-auth-btn">
-    </div>
-    <button class="waves-effect waves-light btn" id="authenticate-click">Check Proof of Authenticity</button>
-    <div id="authenticate-field"></div>
-
-    <!--Organization checking feature-->
-    <h3>Organization Check</h3>
-
-    <div class="row">
-      <div class="input-field col s6">
-        <input value="0x6a36580fa59f1b8f4865444ab9fe9168b625981c" id="org-id" type="text" class="validate">
-        <label class="active" for="first_name2">Organization's address</label>
-        <input type="button" class="waves-effect waves-light btn" name="Find" id="org-click" value="Find">
-      </div>
-    </div>
-    Organization Name: <div id="name-area">
-    </div>
-    Organization Email:<div id="email-area">
-    </div>
 
   </div>
   <script>
