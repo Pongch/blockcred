@@ -23,48 +23,26 @@ let block = BlockCert.at('0x2ae90817ffb2d24b3f7e0d75c3dba32a56aeaa82');
 
 //on button click, get value from field
 window.onload = function() {
-  //document.getElementById('org-click').onclick = function(){OutputOrg()};
-  //document.getElementById("cert-click").onclick = function(){OutputCert()};
-  //document.getElementById("authenticate-click").onclick = function(){OutputAuth()};
-  //document.getElementById("authenticate-click").style.visibility = "hidden";
 
-  //get organization details
-  function OutputOrg() {
-    let OrganizationId = document.getElementById('org-id').value;
+    //set default account
+    web3.eth.defaultAccount = web3.eth.accounts[0];
 
-    org.getOrganization(OrganizationId, function(error, result){
-        if(!error)
-          document.getElementById("name-area").innerHTML = result[0].toString();
-          document.getElementById("email-area").innerHTML = result[1].toString();
+    document.getElementById('org-click').onclick = function(){setOrg()};
+
+    //register new organization
+    function setOrg(){
+      //set name
+      let orgName = document.getElementById("org-name").value;
+      //set email
+      let orgEmail = document.getElementById("org-email").value;
+      //set organization value
+      org.setOrganization(orgName, orgEmail, function(error, result){
+        if(!error){
           console.log(result);
+          Materialize.toast('Organization has been registered on the blockchain', 4000);
         }
-    );
-    }
-
-    function OutputCert(){
-      let certificateId = document.getElementById('cert-id').value;
-
-      block.getCertificateById(certificateId, function(error, result){
-        if(!error)
-          document.getElementById("date").innerHTML = '<h4 class="center-align">' + result[2].toString() + '</h4>';
-          document.getElementById("name").innerHTML = '<h4 class="center-align">' + result[1].toString() + '</h4>';
-          document.getElementById("degree-name").innerHTML = '<h4 class="center-align">' + result[3].toString() + '</h4>';
-          document.getElementById("org").innerHTML = result[4].toString();
-          document.getElementById("authenticate-click").style.visibility = "visible";
       });
     }
-
-    function OutputAuth(){
-      let authenticateId = document.getElementById('org').innerHTML;
-      console.log(authenticateId);
-
-      org.getOrganization(authenticateId, function(error, result){
-        if(!error)
-          document.getElementById("authenticate-field").innerHTML = '<h4 class="center-align"> <i class="material-icons">verified_user</i> Certificate is published by ' + result[0].toString() + '</h4>';
-          console.log(result[0].toString());
-      })
-    }
-
 
   }
 
