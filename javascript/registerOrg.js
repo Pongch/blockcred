@@ -40,6 +40,8 @@ window.onload = function() {
         if(!error){
           console.log(result);
           Materialize.toast('Organization has been registered on the blockchain', 4000);
+        } else {
+          Materialize.toast('Please have Metamask installed !', 4000);
         }
       });
     }
