@@ -27,7 +27,7 @@ window.onload = function() {
   //warn user to have Metamask installed before interacting with Dapp
   Materialize.toast('Please have Metamask installed before registering on the smart contract', 4000);
 
-  document.getElementById('org-click').onclick = function(){RegisterCert()};
+  document.getElementById('degree-click').onclick = function(){RegisterCert()};
 
   //add certificate to the Blockchain Smart contract details
   function RegisterCert() {
