@@ -30,7 +30,7 @@ window.onload = function() {
     //tell user to install Metamask
     Materialize.toast('Please have Metamask installed before registering on the smart contract', 4000);
 
-    document.getElementById('org-click').onclick = function(){setOrg()};
+    document.getElementById('degree-click').onclick = function(){setOrg()};
 
     //register new organization
     function setOrg(){
