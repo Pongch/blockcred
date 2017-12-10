@@ -35,8 +35,8 @@ window.onload = function() {
     let degreeName = document.getElementById('degree-name').value;
     let degreeId = document.getElementById('degree-id').value;
     let degreeDate = document.getElementById('degree-date').value;
-
-    block.setCertificate(personName, degreeName, degreeId, degreeDate, function(error, result){
+    //uint256 id, string name, string certDate, string certName
+    block.setCertificate(degreeId, personName, degreeDate, degreeName, function(error, result){
         if(!error)
           Materialize.toast('Certificate Successfully added', 4000)
           console.log(result);
