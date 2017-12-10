@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="javascript/web3.js"></script>
-  <script src="javascript/getCert.js"></script>
+  <script src="javascript/registerCert.js"></script>
   <title>BlocCredential</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
         <div class="nav-wrapper">
           <a href="/blockcred" class="brand-logo">BlockCred</a>
           <ul id="nav-mobile" class="right ">
-            <li><a href="#" data-activates="slide-out" class="button-slide"><i class="material-icons large">format_list_bulleted</i></a></li>
+            <li><a href="/getcert.html" data-activates="slide-out" class="button-slide"><i class="material-icons large">format_list_bulleted</i></a></li>
           </ul>
         </div>
       </div>
@@ -35,37 +35,36 @@
       </div>
       <span class="white-text name"><h5>Menu</h5></span>
     </div></li>
-    <li><a href="/blockcred"><i class="material-icons">launch</i>HOME</a></li>
+    <li><a href="/blockcred"><i class="material-icons">launch</i>Home</a></li>
     <li><a href="/blockcred/getcert.html"><i class="material-icons">search</i>Get Credential</a></li>
     <li><a href="/blockcred/register-org.html"><i class="material-icons">add_circle</i>Register Organization</a></li>
     <li><a href="/blockcred/verify-org.html"><i class="material-icons">verified_user</i> Verify Organization</a></li>
   </ul>
 
-
   <div class="container">
-    <!--retrieve certificate feature-->
-    <h3>Retrieve Proof of Credential</h3>
+
+    <!--Organization checking feature-->
+    <h3>Register a Certificate</h3>
+
     <div class="row">
-      <div class="input-field col s6">
-        <input type="text" class="validate" id="cert-id" name="id" value="1738">
-        <label for="cert" class="active">Certificate ID</label>
-        <button class="waves-effect waves-light btn" id="cert-click">Get Certificate</button>
+      <div class="input-field col s12">
+        <input value="" id="person-name" type="text" class="validate">
+        <label class="active" for="person-name">Persons Name</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="" id="degree-name" type="text" class="validate">
+        <label class="active" for="degree-name">Degree Name</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="" id="degree-id" type="text" class="validate">
+        <label class="active" for="degree-id">Degree Unique ID NO.</label>
+      </div>
+      <div class="input-field col s12">
+        <input value="" id="degree-date" type="text" class="validate">
+        <label class="active" for="degree-date">Degree Issuance Date</label>
+        <input type="button" class="waves-effect waves-light btn" name="register" id="degree-click" value="REGISTER">
       </div>
     </div>
-
-    <h4 class="center-align"><div id="org-name"><i class="material-icons large">school</i></div></h4>
-    <p class="center-align">To all persons be it known that</p>
-    <h4 class="center-align"><div id="name">...</div></h4>
-    <p class="center-align">has completed the prescribed studies and satisfied the requirement for:</p>
-    <h4 class="center-align"><div id="degree-name">...</div></h4>
-    <p class="center-align">at the date:</p>
-    <h4 class="center-align"><div id="date">...</div></h4>
-    <p class="center-align">certified by:</p>
-    <p class="center-align"><div id="org" class="center-align">...</div></p>
-    <div class="card-action" id="proof-auth-btn">
-    </div>
-    <div id="authenticate-field"></div>
-    <button class="waves-effect waves-light btn" id="authenticate-click">Check Proof of Authenticity</button>
 
 
   </div>
@@ -75,8 +74,8 @@
     });
     // Initialize collapse button
   $(".button-slide").sideNav();
-  // Initialize collapsible
-  //initialize the popup
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
   </script>
 </body>
 </html>

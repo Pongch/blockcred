@@ -24,30 +24,26 @@ let block = BlockCert.at('0x2ae90817ffb2d24b3f7e0d75c3dba32a56aeaa82');
 //on button click, get value from field
 window.onload = function() {
 
-    //set default account
-    web3.eth.defaultAccount = web3.eth.accounts[0];
+  //warn user to have Metamask installed before interacting with Dapp
+  Materialize.toast('Please have Metamask installed before registering on the smart contract', 4000);
 
-    //tell user to install Metamask
-    Materialize.toast('Please have Metamask installed before registering on the smart contract', 4000);
+  document.getElementById('org-click').onclick = function(){RegisterCert()};
 
-    document.getElementById('org-click').onclick = function(){setOrg()};
+  //add certificate to the Blockchain Smart contract details
+  function RegisterCert() {
+    let personName = document.getElementById('person-name').value;
+    let degreeName = document.getElementById('degree-name').value;
+    let degreeId = document.getElementById('degree-id').value;
+    let degreeDate = document.getElementById('degree-date').value;
 
-    //register new organization
-    function setOrg(){
-      //set name
-      let orgName = document.getElementById("org-name").value;
-      //set email
-      let orgEmail = document.getElementById("org-email").value;
-      //set organization value
-      org.setOrganization(orgName, orgEmail, function(error, result){
-        if(!error){
+    block.setCertificate(personName, degreeName, degreeId, degreeDate, function(error, result){
+        if(!error)
+          Materialize.toast('Certificate Successfully added', 4000)
           console.log(result);
-          Materialize.toast('Organization has been registered on the blockchain', 4000);
-        } else {
-          Materialize.toast('Please have Metamask installed !', 4000);
         }
-      });
+    );
     }
+
 
   }
 
